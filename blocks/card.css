@@ -1,0 +1,12 @@
+card {
+  width: 413px;
+  height: 413px;
+}
+
+.card__image {
+  width: 413px;
+  height: 445px;
+}
+
+card__content {
+}
