@@ -1,12 +1,24 @@
-card {
+.card {
   width: 413px;
-  height: 413px;
+  /* height: 445px; */
 }
 
 .card__image {
   width: 413px;
-  height: 445px;
+  height: 413px;
+  object-fit: cover;
+  display: block;
 }
 
-card__content {
+.card__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__btn-heart {
+  width: 23px;
+  height: 20px;
+  border: none;
+  opacity: 40%;
 }
