@@ -29,6 +29,10 @@
   margin-top: auto;
 }
 
+.profile__pencil {
+  margin-right: 8px;
+}
+
 .profile__add-btn {
   margin-left: auto;
   margin-top: auto;
