@@ -34,7 +34,6 @@
   gap: 8px;
   margin-top: auto;
   padding: 0;
-  /* font-family: "Poppins", Arial, Helvetica, sans-serif; */
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
@@ -53,6 +52,7 @@
   margin-left: auto;
   margin-top: auto;
   text-align: left;
+  align-items: center;
   white-space: nowrap;
   width: 149px;
   height: 52px;

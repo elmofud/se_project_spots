@@ -1,5 +1,7 @@
 .card {
   width: 413px;
+  height: 445px;
+  margin-top: 20px;
 }
 
 .card__image {
