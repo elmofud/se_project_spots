@@ -59,6 +59,7 @@
     max-width: 288px;
     align-items: center;
     text-align: center;
+    padding-top: 20px;
   }
 
   .profile__avatar {
@@ -67,7 +68,14 @@
     width: 80px;
   }
 
+  .profile__name {
+    margin-top: 12px;
+  }
+
+  .profile__edit-btn {
+    margin-top: 32px;
+  }
   .profile__add-btn {
-    margin: 0;
+    margin: 20px 0 0;
   }
 }
