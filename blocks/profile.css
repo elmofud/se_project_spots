@@ -90,6 +90,7 @@
 
   .profile__column {
     margin-bottom: 20px;
+    align-items: center;
   }
 
   .profile__name {
