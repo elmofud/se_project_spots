@@ -39,6 +39,9 @@
 @media only screen and (max-width: 627px) {
   .card {
     width: 288px;
+    height: 318px;
+    margin: 0;
+    /* gap: 12px; */
   }
 
   .card__image {
@@ -48,5 +51,6 @@
 
   .card__content {
     width: 288px;
+    margin-top: 12px;
   }
 }
