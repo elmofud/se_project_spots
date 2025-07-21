@@ -53,7 +53,7 @@
   border: none;
   color: rgba(33, 33, 33, 1);
   opacity: 40%;
-  transition: opacity o.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .profile__edit-btn:hover {
@@ -68,12 +68,11 @@
 .profile__add-btn {
   display: flex;
   gap: 8px;
+  flex-shrink: 0;
   margin-left: auto;
   margin-top: auto;
   text-align: left;
   align-items: center;
-  white-space: nowrap;
-  width: 149px;
   height: 52px;
   padding: 18px 32px;
   border-radius: 8px;
