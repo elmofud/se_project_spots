@@ -51,6 +51,13 @@
   line-height: 1;
   background-color: transparent;
   border: none;
+  color: rgba(33, 33, 33, 1);
+  opacity: 40%;
+  transition: opacity o.3s ease-in-out;
+}
+
+.profile__edit-btn:hover {
+  opacity: 100%;
 }
 
 .profile__pencil {
@@ -77,6 +84,11 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.profile__add-btn:hover {
+  background-color: rgba(33, 33, 33, 0.8);
 }
 
 .profile__plus-icon {
@@ -85,7 +97,7 @@
   height: 12px;
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 647px) {
   .profile {
     flex-direction: column;
     max-width: 288px;

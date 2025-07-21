@@ -37,10 +37,15 @@
   border: none;
   background-image: url(../images/like-icon.svg);
   background-color: transparent;
-  opacity: 40%;
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in-out;
 }
 
-@media only screen and (max-width: 627px) {
+.card__like-btn:hover {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 647px) {
   .card {
     width: 288px;
     height: 318px;
