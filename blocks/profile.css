@@ -21,12 +21,24 @@
   font-weight: 500;
   line-height: 1;
   color: rgba(33, 33, 33, 1);
+  max-width: 420px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .profile__description {
   margin: 12px 0 0;
   color: rgba(33, 33, 33, 0.7);
   font-weight: 500;
+  max-width: 420px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .profile__edit-btn {
@@ -95,10 +107,22 @@
 
   .profile__name {
     margin-bottom: 6px;
+    max-width: 288px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 
   .profile__description {
     margin-bottom: 32px;
+    max-width: 288px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 
   .profile__add-btn {
