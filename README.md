@@ -1,21 +1,38 @@
 # Project 3: Spots
 
-### Overview  
+### Project 3 description:
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+Spots is a simple social photo gallery platform that works well with multimedia devices with different screen sizes. The photo gallery platform allows users to upload photos into an organized social photo gallery with self created informative captions and simple catalogs.
+
+**technologies and techniques used**
+
+figma:
+cloud-based design and prototyping tool primarily used for creating user interfaces and user experiences for digital products.
+
+.html:
+provides the structure and meaning of web content by using "tags" to annotate text, images, and other elements.
+
+.css:
+Style Sheets, is a stylesheet language used in web development.
+
+.grid:
+Used repeat() to change the images display from triple, double and single depending the size of screen.
+
+flex box:
+help to deploy the elements placement in relationship to the parent and child elements.
+
+transition:
+the button required change condition from solid or opaque when hovering. the use of this allow a smoother changes to occur.
+
+fit-cover:
+it forced the images to fit within the confindment of the container it is placed within.
+
+flex-shrink:
+Had problem with the plus button prematurely shrinking when screen was shrinking to mobile size screen. using this techniquies prevented this from happening.
+
+@media:
+CSS technique that allows developers to apply different styles to a website or application based on the characteristics of the device displaying it.
+
+**the link to project on GitHub Pages**
+
+Your site is live at https://elmofud.github.io/se_project_spots/
