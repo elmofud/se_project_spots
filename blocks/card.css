@@ -63,9 +63,10 @@
   }
 
   .card__title {
-    max-width: 288px;
+    max-width: 235px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    font-size: 16px;
   }
 }
