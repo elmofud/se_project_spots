@@ -68,10 +68,8 @@
 .profile__add-btn {
   display: flex;
   gap: 8px;
-  flex-shrink: 0;
   margin-left: auto;
   margin-top: auto;
-  text-align: left;
   align-items: center;
   height: 52px;
   padding: 18px 32px;
@@ -141,5 +139,6 @@
     margin: 0;
     width: 288px;
     justify-content: center;
+    flex-shrink: 0;
   }
 }
