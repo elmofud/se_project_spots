@@ -36,3 +36,7 @@ CSS technique that allows developers to apply different styles to a website or a
 **the link to project on GitHub Pages**
 
 Your site is live at https://elmofud.github.io/se_project_spots/
+
+**the link to project video on YouTube**
+
+https://youtu.be/9bpjfMC3-vM

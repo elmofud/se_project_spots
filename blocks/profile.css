@@ -67,6 +67,7 @@
 
 .profile__add-btn {
   display: flex;
+  flex-shrink: 0;
   gap: 8px;
   margin-left: auto;
   margin-top: auto;
@@ -139,6 +140,5 @@
     margin: 0;
     width: 288px;
     justify-content: center;
-    flex-shrink: 0;
   }
 }
