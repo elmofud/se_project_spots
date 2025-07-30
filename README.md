@@ -40,3 +40,11 @@ Your site is live at https://elmofud.github.io/se_project_spots/
 **the link to project video on YouTube**
 
 https://youtu.be/9bpjfMC3-vM
+
+**problem with video link**
+
+I was having problems getting the audio to play with the video and the large file size. I even tried to change format from .mkv to .mp4. Google drive was taking too long to upload and tried YouTube. I thought YouTube would be a solution; however, I ran into the same problems. Finally, after working with Clipchanp, i was about to find a solution to change the quality of video and one of the video versions finally completed the task.
+
+**the link to project video on Microsoft onedrive**
+
+blob:https://onedrive.live.com/dc8ed8df-32a3-4cd3-9392-aecd40dcfd27
