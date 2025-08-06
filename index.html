@@ -124,8 +124,10 @@
       </footer>
       <div class="modal modal_is-open">
         <div class="modal__container">
-          <button class="modal__close-btn">x</button>
-          <h2 class="modal__title">Edit profile</h2>
+          <div class="modal__row">
+            <h2 class="modal__title">Edit profile</h2>
+            <button class="modal__close-btn">x</button>
+          </div>
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
               Name
@@ -136,7 +138,7 @@
                 placeholder="Type your name"
               />
             </label>
-            <label for="description" class="modal__label">
+            <label for="description-input" class="modal__label">
               Description
               <input
                 type="text"
@@ -151,25 +153,27 @@
       </div>
       <div class="modal modal_is-open">
         <div class="modal__container">
-          <button class="modal__close-btn">x</button>
-          <h2 class="modal__title">Edit profile</h2>
+          <div class="modal__row">
+            <h2 class="modal__title">New Post</h2>
+            <button class="modal__close-btn">x</button>
+          </div>
           <form class="modal__form">
-            <label for="profile-name-input" class="modal__label">
-              Name
+            <label for="image-link-input" class="modal__label">
+              Image link
               <input
-                type="text"
+                type=""
                 class="modal__input"
-                id="profile-name-input"
-                placeholder="Type your name"
+                id="image-link-input"
+                placeholder="Paste a link to the picture"
               />
             </label>
-            <label for="description" class="modal__label">
-              Description
+            <label for="caption-input" class="modal__label">
+              Caption
               <input
                 type="text"
                 class="modal__input"
-                id="description-input"
-                placeholder="Describe yourself"
+                id="caption-input"
+                placeholder="Type your caption"
               />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
