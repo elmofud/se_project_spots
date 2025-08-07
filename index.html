@@ -75,7 +75,7 @@
             <li class="card">
               <img
                 src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt=">An outdoor cafe"
+                alt="An outdoor cafe"
                 class="card__image"
               />
               <div class="card__content">
@@ -120,13 +120,19 @@
         </section>
       </main>
       <footer class="footer page__section">
-        <h2 class="footer__text-footer">2025 &copy; Spots</h2>
+        <h2 class="footer__text">2025 &copy; Spots</h2>
       </footer>
-      <div class="modal modal_is-open">
+      <div class="modal modal_is-opened">
         <div class="modal__container">
           <div class="modal__row">
             <h2 class="modal__title">Edit profile</h2>
-            <button class="modal__close-btn">x</button>
+            <button class="modal__close-btn" type="button">
+              <img
+                src="./images/Close-Icon.svg"
+                alt="close button icon"
+                class="modal__close-btn-icon"
+              />
+            </button>
           </div>
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
@@ -151,17 +157,23 @@
           </form>
         </div>
       </div>
-      <div class="modal modal_is-open">
+      <div class="modal">
         <div class="modal__container">
           <div class="modal__row">
-            <h2 class="modal__title">New Post</h2>
-            <button class="modal__close-btn">x</button>
+            <h2 class="modal__title">New post</h2>
+            <button class="modal__close-btn" type="button">
+              <img
+                src="./images/Close-Icon.svg"
+                alt="close button icon"
+                class="modal__close-btn-icon"
+              />
+            </button>
           </div>
           <form class="modal__form">
             <label for="image-link-input" class="modal__label">
               Image link
               <input
-                type=""
+                type="url"
                 class="modal__input"
                 id="image-link-input"
                 placeholder="Paste a link to the picture"
