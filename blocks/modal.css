@@ -40,6 +40,7 @@
   border-style: none;
   padding: 0;
   margin: 0;
+  cursor: pointer;
 }
 
 .modal__close-btn-icon {
@@ -81,6 +82,7 @@
   background-color: rgba(33, 33, 33, 1);
   color: rgba(252, 245, 229, 1);
   max-width: 156px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 420px) {

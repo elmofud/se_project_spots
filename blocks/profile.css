@@ -54,6 +54,7 @@
   color: rgba(33, 33, 33, 1);
   opacity: 40%;
   transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .profile__edit-btn:hover {
@@ -83,6 +84,7 @@
   font-weight: 500;
   line-height: 1;
   transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .profile__add-btn:hover {
