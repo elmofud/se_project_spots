@@ -58,7 +58,7 @@
               />
               <div class="card__content">
                 <h2 class="card__title">Val Thorens</h2>
-                <button class="card__like-btn"></button>
+                <button type="button" class="card__like-btn"></button>
               </div>
             </li>
             <li class="card">
@@ -69,7 +69,7 @@
               />
               <div class="card__content">
                 <h2 class="card__title">Restaurant terrace</h2>
-                <button class="card__like-btn"></button>
+                <button type="button" class="card__like-btn"></button>
               </div>
             </li>
             <li class="card">
@@ -80,29 +80,29 @@
               />
               <div class="card__content">
                 <h2 class="card__title">An outdoor cafe</h2>
-                <button class="card__like-btn"></button>
+                <button type="button" class="card__like-btn"></button>
               </div>
             </li>
             <li class="card">
               <img
                 src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="very long bridge"
+                alt="A very long bridge, over the forest"
                 class="card__image"
               />
               <div class="card__content">
                 <h2 class="card__title">A very long bridge, over the forest</h2>
-                <button class="card__like-btn"></button>
+                <button type="button" class="card__like-btn"></button>
               </div>
             </li>
             <li class="card">
               <img
                 src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="tunnel with lights"
+                alt="Tunnel with many lights"
                 class="card__image"
               />
               <div class="card__content">
                 <h2 class="card__title">Tunnel with many lights</h2>
-                <button class="card__like-btn"></button>
+                <button type="button" class="card__like-btn"></button>
               </div>
             </li>
             <li class="card">
@@ -113,20 +113,20 @@
               />
               <div class="card__content">
                 <h2 class="card__title">Mountain house</h2>
-                <button class="card__like-btn"></button>
+                <button type="button" class="card__like-btn"></button>
               </div>
             </li>
           </ul>
         </section>
       </main>
       <footer class="footer page__section">
-        <h2 class="footer__text">2025 &copy; Spots</h2>
+        <p class="footer__text">2025 &copy; Spots</p>
       </footer>
-      <div class="modal" id="edit-profile-modal">
+      <div id="edit-profile-modal" class="modal">
         <div class="modal__container">
           <div class="modal__row">
             <h2 class="modal__title">Edit profile</h2>
-            <button class="modal__close-btn" type="button">
+            <button type="button" class="modal__close-btn">
               <img
                 src="./images/Close-Icon.svg"
                 alt="close button icon"
@@ -139,8 +139,8 @@
               Name
               <input
                 type="text"
-                class="modal__input"
                 id="profile-name-input"
+                class="modal__input"
                 placeholder="Type your name"
               />
             </label>
@@ -148,8 +148,8 @@
               Description
               <input
                 type="text"
-                class="modal__input"
                 id="description-input"
+                class="modal__input"
                 placeholder="Describe yourself"
               />
             </label>
@@ -157,11 +157,11 @@
           </form>
         </div>
       </div>
-      <div class="modal" id="new-post-modal">
+      <div id="new-post-modal" class="modal">
         <div class="modal__container">
           <div class="modal__row">
             <h2 class="modal__title">New post</h2>
-            <button class="modal__close-btn" type="button">
+            <button type="button" class="modal__close-btn">
               <img
                 src="./images/Close-Icon.svg"
                 alt="close button icon"
@@ -174,8 +174,8 @@
               Image link
               <input
                 type="url"
-                class="modal__input"
                 id="image-link-input"
+                class="modal__input"
                 placeholder="Paste a link to the picture"
               />
             </label>
@@ -183,8 +183,8 @@
               Caption
               <input
                 type="text"
-                class="modal__input"
                 id="caption-input"
+                class="modal__input"
                 placeholder="Type your caption"
               />
             </label>
