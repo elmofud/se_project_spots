@@ -1,10 +1,10 @@
 .page {
-  background-color: rgb(252, 245, 229);
+  min-height: 100vh;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
-  min-height: 100vh;
+  background-color: rgb(252, 245, 229);
 }
 
 .page__section {
