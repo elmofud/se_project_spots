@@ -6,10 +6,10 @@
 .card__image {
   width: 413px;
   height: 413px;
-  object-fit: cover;
-  display: block;
-  border-radius: 8px;
   margin: 0;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .card__content {
@@ -20,23 +20,23 @@
 }
 
 .card__title {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  color: rgba(33, 33, 33, 1);
   max-width: 413px;
+  margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  color: rgba(33, 33, 33, 1);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .card__like-btn {
   width: 23px;
   height: 20px;
   border: none;
-  background-image: url(../images/like-icon.svg);
   background-color: transparent;
+  background-image: url(../images/like-icon.svg);
   opacity: 0.4;
   transition: opacity 0.3s ease-in-out;
   cursor: pointer;
