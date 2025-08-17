@@ -43,37 +43,37 @@ const addCardFormEl = newPostModal.querySelector(".modal__form");
 const newPostCaptionInput = addCardFormEl.querySelector("#caption-input");
 const newPostLinkInput = addCardFormEl.querySelector("#image-link-input");
 
-function openCloseModal(modalType, modalState) {
-  if (modalState === "open") {
-    modalType.classList.add("modal_is-opened");
-  } else {
-    modalType.classList.remove("modal_is-opened");
-  }
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
 }
 
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  openCloseModal(editProfileModal, "open");
+  openModal(editProfileModal, "open");
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
-  openCloseModal(editProfileModal, "close");
+  closeModal(editProfileModal, "close");
 });
 
 newPostBtn.addEventListener("click", function () {
-  openCloseModal(newPostModal, "open");
+  openModal(newPostModal, "open");
 });
 
 newPostCloseBtn.addEventListener("click", function () {
-  openCloseModal(newPostModal, "close");
+  closeModal(newPostModal, "close");
 });
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  openCloseModal(editProfileModal, "close");
+  closeModal(editProfileModal, "close");
   console.log("submitting");
 }
 
@@ -83,7 +83,7 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
   console.log(newPostCaptionInput.value);
   console.log(newPostLinkInput.value);
-  openCloseModal(newPostModal, "close");
+  closeModal(newPostModal, "close");
 }
 
 addCardFormEl.addEventListener("submit", handleAddCardSubmit);
