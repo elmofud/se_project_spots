@@ -33,8 +33,10 @@ const editProfileDescriptionInput =
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
+
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
+
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
@@ -43,12 +45,27 @@ const addCardFormEl = newPostModal.querySelector(".modal__form");
 const newPostCaptionInput = addCardFormEl.querySelector("#caption-input");
 const newPostLinkInput = addCardFormEl.querySelector("#image-link-input");
 
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+const cardsList = document.querySelector(".cards__list");
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+}
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitleEl = cardElement.querySelector(".card__title");
+  const cardImageEl = cardElement.querySelector(".card__image");
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+  cardTitleEl.textContent = data.name;
+  return cardElement;
 }
 
 editProfileBtn.addEventListener("click", function () {
@@ -81,14 +98,18 @@ editProfileFormEl.addEventListener("submit", handleEditProfileSubmit);
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  console.log(newPostCaptionInput.value);
-  console.log(newPostLinkInput.value);
+  const inputValue = {
+    name: newPostCaptionInput.value,
+    link: newPostLinkInput.value,
+  };
+  const cardEl = getCardElement(inputValue);
+  cardsList.prepend(cardEl);
   closeModal(newPostModal);
 }
 
 addCardFormEl.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach(function (item) {
-  console.log(item.name);
-  console.log(item.link);
+  const cardEl = getCardElement(item);
+  cardsList.prepend(cardEl);
 });
