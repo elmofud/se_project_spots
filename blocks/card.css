@@ -34,6 +34,7 @@
 .card__like-btn {
   width: 23px;
   height: 20px;
+  justify-self: end;
   border: none;
   background-color: transparent;
   background-image: url(../images/like-icon.svg);
@@ -42,15 +43,19 @@
   cursor: pointer;
 }
 
-.card__like-btn_active {
-  background-image: url(../images/stateHeartAct.svg);
-}
-
 .card__like-btn:hover {
-  /* opacity: 1; */
-  background-color: rgba(252, 245, 229, 1);
+  opacity: 1;
   background-image: url(../images/stateHeartLike.svg);
 }
+
+.card__like-btn_active {
+  background-image: url(../images/stateHeartAct.svg);
+  opacity: 1;
+}
+
+/* .card__like-btn_active:hover {
+  opacity: 0.5;
+} */
 
 @media only screen and (max-width: 647px) {
   .card {
