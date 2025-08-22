@@ -45,17 +45,17 @@
 
 .card__like-btn:hover {
   opacity: 1;
-  background-image: url(../images/stateHeartLike.svg);
+  background-image: url(../images/stateHeartAct.svg);
 }
 
 .card__like-btn_active {
-  background-image: url(../images/stateHeartAct.svg);
+  background-image: url(../images/stateHeartLike.svg);
   opacity: 1;
 }
 
-/* .card__like-btn_active:hover {
+.card__like-btn_active:hover {
   opacity: 0.5;
-} */
+}
 
 @media only screen and (max-width: 647px) {
   .card {
