@@ -20,7 +20,7 @@
 }
 
 .card__title {
-  max-width: 413px;
+  max-width: 390px;
   margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -45,16 +45,16 @@
 
 .card__like-btn:hover {
   opacity: 1;
-  background-image: url(../images/stateHeartAct.svg);
+  background: url(../images/stateHeartAct.svg) no-repeat center center/cover;
 }
 
 .card__like-btn_active {
-  background-image: url(../images/stateHeartLike.svg);
+  background: url(../images/heartAvtive.svg) no-repeat center center/cover;
   opacity: 1;
 }
 
 .card__like-btn_active:hover {
-  opacity: 0.5;
+  background: url(../images/stateHeartLike.svg) no-repeat center center/cover;
 }
 
 @media only screen and (max-width: 647px) {
