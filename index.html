@@ -52,6 +52,7 @@
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
+                <button class="card__delete-btn"></button>
                 <img src="#" alt="" class="card__image" />
                 <div class="card__content">
                   <h2 class="card__title"></h2>
@@ -133,6 +134,27 @@
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
+        </div>
+      </div>
+
+      <div id="preview-modal" class="modal modal_is-opened">
+        <div class="modal__image-container">
+          <button
+            type="button"
+            class="modal__close-btn modal__close_type_preview"
+          >
+            <img
+              src="./images/Close-Icon.svg"
+              alt="close button icon"
+              class="modal__close-btn-icon"
+            />
+          </button>
+          <img
+            src=" https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg"
+            alt="gold Gate Bridge"
+            class="modal__image"
+          />
+          <p class="modal__caption">Golden Gate Bridge</p>
         </div>
       </div>
     </div>

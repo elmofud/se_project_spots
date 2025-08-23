@@ -1,6 +1,7 @@
 .card {
   width: 413px;
   height: 445px;
+  position: relative;
 }
 
 .card__image {
@@ -17,6 +18,21 @@
   align-items: center;
   justify-content: space-between;
   margin: 12px 0 0;
+}
+.card__delete-btn {
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent url(../images/stateDefault.svg) no-repeat center
+    center/cover;
+}
+
+.card__delete-btn:hover {
+  background: transparent url(../images/stateHover.svg) no-repeat center
+    center/cover;
 }
 
 .card__title {

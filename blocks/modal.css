@@ -28,6 +28,8 @@
   border-radius: 8px;
 }
 
+
+
 .modal__row {
   display: flex;
   justify-content: space-between;
@@ -85,6 +87,34 @@
   cursor: pointer;
 }
 
+.modal__image-container {
+  position: relative;
+  border-radius: 8px;
+}
+
+.modal__image {
+    max-width: 80vw;
+  max-height: 80vh;
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.modal__caption {
+  color: white;
+  background-color: black;
+  padding: 4px 5px;
+
+
+}
+
+.modal__close_type_preview{
+  position:absolute;
+right: -52.5px;
+top: 0;
+background: transparent url(../images/previewCloseIcon.svg) no-repeat center center/cover;
+}
+
 @media only screen and (max-width: 420px) {
   .modal__container {
     padding: 12px;
@@ -111,4 +141,5 @@
     max-width: none;
     width: 100%;
   }
-}
+
+
