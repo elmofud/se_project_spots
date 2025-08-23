@@ -28,6 +28,7 @@
   border: none;
   background: transparent url(../images/stateDefault.svg) no-repeat center
     center/cover;
+  cursor: pointer;
 }
 
 .card__delete-btn:hover {
