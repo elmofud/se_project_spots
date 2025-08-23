@@ -28,8 +28,6 @@
   border-radius: 8px;
 }
 
-
-
 .modal__row {
   display: flex;
   justify-content: space-between;
@@ -43,10 +41,8 @@
   margin: 0;
   padding: 0;
   cursor: pointer;
-}
-
-.modal__close-btn-icon {
-  background-color: rgba(255, 255, 255, 1);
+  background: transparent url(../images/Close-Icon.svg) no-repeat center
+    center/cover;
 }
 
 .modal__title {
@@ -93,26 +89,30 @@
 }
 
 .modal__image {
-    max-width: 80vw;
+  max-width: 80vw;
   max-height: 80vh;
   width: 100%;
   display: block;
   object-fit: contain;
+  border-radius: 8px;
 }
 
 .modal__caption {
   color: white;
   background-color: black;
+  margin: 8px 0 0;
   padding: 4px 5px;
-
-
+  display: inline;
+  position: absolute;
+  border-radius: 8px;
 }
 
-.modal__close_type_preview{
-  position:absolute;
-right: -52.5px;
-top: 0;
-background: transparent url(../images/previewCloseIcon.svg) no-repeat center center/cover;
+.modal__close_type_preview {
+  position: absolute;
+  right: -52.5px;
+  top: 0;
+  background: transparent url(../images/previewCloseIcon.svg) no-repeat center
+    center/cover;
 }
 
 @media only screen and (max-width: 420px) {
@@ -141,5 +141,4 @@ background: transparent url(../images/previewCloseIcon.svg) no-repeat center cen
     max-width: none;
     width: 100%;
   }
-
-
+}
