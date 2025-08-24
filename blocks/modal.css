@@ -47,6 +47,7 @@
   cursor: pointer;
   background: transparent url(../images/Close-Icon.svg) no-repeat center
     center/cover;
+  transition: backgroun 0.5s ease-in-out;
 }
 
 .modal__close-btn:hover {
@@ -78,6 +79,10 @@
   border: 1px solid rgba(33, 33, 33, 0.4);
 }
 
+.modal__input:hover {
+  border: 1px solid rgba(33, 33, 33, 1);
+}
+
 .modal__input::placeholder {
   color: rgba(33, 33, 33, 0.3);
   font-size: 20px;
@@ -90,6 +95,11 @@
   border-radius: 8px;
   color: rgba(252, 245, 229, 1);
   cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.modal__submit-btn:hover {
+  opacity: 0.8;
 }
 
 .modal__image-container {

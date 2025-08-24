@@ -1,7 +1,7 @@
 const initialCards = [
   {
     name: "Golden Gate Bridge",
-    link: " https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
   {
     name: "Val Thorens",
@@ -122,6 +122,7 @@ newPostBtn.addEventListener("click", () => {
 
 newPostCloseBtn.addEventListener("click", () => {
   closeModal(newPostModal);
+  addCardFormEl.reset();
 });
 
 function handleEditProfileSubmit(evt) {
@@ -129,7 +130,7 @@ function handleEditProfileSubmit(evt) {
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
   closeModal(editProfileModal);
-  console.log("submitting");
+  editProfileFormEl.reset();
 }
 
 editProfileFormEl.addEventListener("submit", handleEditProfileSubmit);
@@ -140,9 +141,11 @@ function handleAddCardSubmit(evt) {
     name: newPostCaptionInput.value,
     link: newPostLinkInput.value,
   };
+
   const cardEl = getCardElement(inputValue);
   cardsList.prepend(cardEl);
   closeModal(newPostModal);
+  addCardFormEl.reset();
 }
 
 addCardFormEl.addEventListener("submit", handleAddCardSubmit);
