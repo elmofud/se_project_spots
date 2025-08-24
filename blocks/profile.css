@@ -97,7 +97,7 @@
   fill: rgba(252, 245, 229, 1);
 }
 
-@media only screen and (max-width: 647px) {
+@media only screen and (max-width: 627px) {
   .profile {
     max-width: 288px;
     padding-top: 20px;

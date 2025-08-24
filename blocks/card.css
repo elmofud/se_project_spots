@@ -78,7 +78,7 @@
   background: url(../images/stateHeartLike.svg) no-repeat center center/cover;
 }
 
-@media only screen and (max-width: 647px) {
+@media only screen and (max-width: 627px) {
   .card {
     width: 288px;
     height: 318px;
