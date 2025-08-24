@@ -51,7 +51,7 @@ const newPostLinkInput = addCardFormEl.querySelector("#image-link-input");
 
 const previewModal = document.querySelector("#preview-modal");
 const previewCloseBtn = previewModal.querySelector(
-  ".modal__close_type_preview"
+  ".modal__close-btn_type_preview"
 );
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewCaptionEl = previewModal.querySelector(".modal__caption");
