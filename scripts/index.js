@@ -69,6 +69,12 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  closeModal(previewModal);
+  closeModal(editProfileModal);
+  closeModal(newPostModal);
+});
+
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
