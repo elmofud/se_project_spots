@@ -50,7 +50,8 @@
 }
 
 .modal__close-btn:hover {
-  background: transparent url(../images/closeBlakeVariant.svg) no-repeat center center/cover;
+  background: transparent url(../images/closeBlakeVariant.svg) no-repeat center
+    center/cover;
 }
 
 .modal__title {
@@ -111,7 +112,7 @@
   display: inline;
   font-size: 20px;
   color: rgba(255, 255, 255, 1);
-  background-color: rgba( 0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 1);
   position: absolute;
   border-radius: 8px;
 }
@@ -122,11 +123,11 @@
   top: 0;
   background: transparent url(../images/previewCloseIcon.svg) no-repeat center
     center/cover;
-
 }
 
 .modal__close_type_preview:hover {
-  background: transparent url(../images/closeGrayVariant.svg) no-repeat center center/cover;
+  background: transparent url(../images/closeGrayVariant.svg) no-repeat center
+    center/cover;
 }
 
 @media only screen and (max-width: 627px) {
@@ -134,6 +135,7 @@
     top: -48px;
     right: 0;
   }
+}
 
 @media only screen and (max-width: 420px) {
   .modal__container {
