@@ -1,4 +1,8 @@
-const showInputError = (formEl, inputEl, errorMsg) => {};
+const showInputError = (formEl, inputEl, errorMsg) => {
+  const errorMsgID = inputEl.id + "-error";
+  const errorMsgEl = document.querySelector("#" + errorMsgID);
+  errorMsgEl.textContent = errorMsg;
+};
 
 const checkInputValidity = (formEl, inputEl) => {
   if (!inputEl.validity.valid) {
