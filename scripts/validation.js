@@ -1,18 +1,26 @@
 const showInputError = (formEl, inputEl, errorMsg) => {
-  const errorMsgID = inputEl.id + "-error";
-  const errorMsgEl = document.querySelector("#" + errorMsgID);
+  const errorMsgEl = document.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = errorMsg;
+  inputEl.classList.add("modal__input_type_error");
+};
+
+const hideInputError = (formEl, inputEl) => {
+  const errorMsgEl = document.querySelector(`#${inputEl.id}-error`);
+  errorMsgEl.textContent = "";
+  inputEl.classList.remove("modal__input_type_error");
 };
 
 const checkInputValidity = (formEl, inputEl) => {
   if (!inputEl.validity.valid) {
     showInputError(formEl, inputEl, inputEl.validationMessage);
+  } else {
+    hideInputError(formEl, inputEl);
   }
 };
 
 const setEventListeners = (formEl) => {
   const inputList = formEl.querySelectorAll(".modal__input");
-  const buttonEl = formEl.querySelectorAll("modal__button");
+  const buttonEl = formEl.querySelector(".modal__button");
 
   //todd - handle intial states
   //toggleButtonState(inputList, buttonEl);
