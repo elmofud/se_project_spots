@@ -46,6 +46,7 @@ const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
 const addCardFormEl = newPostModal.querySelector(".modal__form");
+const cardSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
 const newPostCaptionInput = addCardFormEl.querySelector("#caption-input");
 const newPostLinkInput = addCardFormEl.querySelector("#image-link-input");
 
@@ -105,6 +106,10 @@ function getCardElement(data) {
 editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  resetValidation(editProfileFormEl, [
+    editProfileNameInput,
+    editProfileDescriptionInput,
+  ]);
   openModal(editProfileModal);
 });
 
@@ -129,8 +134,8 @@ function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  closeModal(editProfileModal);
   editProfileFormEl.reset();
+  closeModal(editProfileModal);
 }
 
 editProfileFormEl.addEventListener("submit", handleEditProfileSubmit);
@@ -144,8 +149,9 @@ function handleAddCardSubmit(evt) {
 
   const cardEl = getCardElement(inputValue);
   cardsList.prepend(cardEl);
+  evt.target.reset();
+  disabledBtn(cardSubmitBtn);
   closeModal(newPostModal);
-  addCardFormEl.reset();
 }
 
 addCardFormEl.addEventListener("submit", handleAddCardSubmit);

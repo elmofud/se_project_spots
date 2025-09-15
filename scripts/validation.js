@@ -26,25 +26,34 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonEl) => {
   if (hasInvalidInput(inputList)) {
-    buttonEl.disabled = true;
-    buttonEl.classList.add(modal__submit - btn_type_inactive);
+    disabledBtn(buttonEl);
   } else {
     buttonEl.disabled = false;
-    buttonEl.classList.remove(modal__submit - btn_type_inactive);
+    buttonEl.classList.remove("modal__submit-btn_type_inactive");
   }
 };
 
-const setEventListeners = (formEl) => {
-  const inputList = formEl.querySelectorAll(".modal__input");
-  const buttonEl = formEl.querySelector(".modal__button");
+const disabledBtn = (buttonEl) => {
+  buttonEl.disabled = true;
+  buttonEl.classList.add("modal__submit-btn_type_inactive");
+};
 
-  //todd - handle intial states
-  //toggleButtonState(inputList, buttonEl);
+const resetValidation = (formEl, inputList) => {
+  inputList.forEach((inputEl) => {
+    hideInputError(formEl, inputEl);
+  });
+};
+
+const setEventListeners = (formEl) => {
+  const inputList = Array.from(formEl.querySelectorAll(".modal__input"));
+  const buttonEl = formEl.querySelector(".modal__submit-btn");
+
+  toggleButtonState(inputList, buttonEl);
 
   inputList.forEach((inputEl) => {
     inputEl.addEventListener("input", function () {
       checkInputValidity(formEl, inputEl);
-      //toggleButtonState(inputList, buttonEl);
+      toggleButtonState(inputList, buttonEl);
     });
   });
 };
