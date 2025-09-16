@@ -106,7 +106,7 @@ function getCardElement(data) {
 editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  resetValidation(editProfileFormEl, [
+  resetValidation(editProfileFormEl, settings, [
     editProfileNameInput,
     editProfileDescriptionInput,
   ]);
@@ -150,7 +150,7 @@ function handleAddCardSubmit(evt) {
   const cardEl = getCardElement(inputValue);
   cardsList.prepend(cardEl);
   evt.target.reset();
-  disabledBtn(cardSubmitBtn);
+  disabledBtn(cardSubmitBtn, settings);
   closeModal(newPostModal);
 }
 
