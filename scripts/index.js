@@ -82,6 +82,16 @@ function modalHandler(openClose, modal) {
   }
 }
 
+const modals = document.querySelectorAll(".modal");
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modalHandler("close", modal);
+    }
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   modalHandler("close", previewModal);
   modalHandler("close", editProfileModal);

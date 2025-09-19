@@ -38,6 +38,11 @@
     center/cover;
 }
 
+.card__delete-btn:focus {
+  outline: 2px solid rgba(0, 0, 0, 1);
+  outline-offset: 2px;
+}
+
 .card__title {
   max-width: 390px;
   margin: 0;
@@ -66,6 +71,11 @@
 .card__like-btn:hover {
   opacity: 1;
   background: url(../images/stateHeartAct.svg) no-repeat center center/cover;
+}
+
+.card__like-btn:focus {
+  outline: 2px solid rgba(0, 0, 0, 1);
+  outline-offset: 2px;
 }
 
 .card__like-btn_active {
