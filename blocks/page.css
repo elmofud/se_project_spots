@@ -12,6 +12,19 @@
   margin: 0 auto;
 }
 
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 @media only screen and (max-width: 627px) {
   .page__section {
     max-width: 288px;
