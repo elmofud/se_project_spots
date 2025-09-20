@@ -33,9 +33,29 @@ Had problem with the plus button prematurely shrinking when screen was shrinking
 @media:
 CSS technique that allows developers to apply different styles to a website or application based on the characteristics of the device displaying it.
 
+**JavaScript:**
+
+Jvalidation.js:
+Script controling logic for validation of input fields and error messages.
+
+index.js:
+script controling button navigation and modal interface.
+
+Escape Key closure:
+script to close modal by pressing the "Escape Key" as if using the close button.
+
+outside modal closure:
+script to closing modal only by clicking outside the modal and not the main modal.
+
+submit button lock:
+script to lock submit button intil input field meet the criteria to become active.
+
+Image scr through JavaScript:
+script to guide image whithin HTML.
+
 **the link to project on GitHub Pages**
 
-Your site is live at https://elmofud.github.io/se_project_spots/
+Your site is live at https://github.com/elmofud/se_project_spots.git
 
 **problem with video link**
 
