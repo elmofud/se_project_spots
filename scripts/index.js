@@ -149,7 +149,6 @@ newPostBtn.addEventListener("click", () => {
 
 newPostCloseBtn.addEventListener("click", () => {
   closeModal(newPostModal);
-  addCardFormEl.reset();
 });
 
 function handleEditProfileSubmit(evt) {
