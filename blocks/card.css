@@ -21,8 +21,8 @@
   margin: 12px 0 0;
 }
 .card__delete-btn {
-  width: 23px;
-  height: 23px;
+  width: 32px;
+  height: 32px;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -39,8 +39,8 @@
 }
 
 .card__delete-btn:focus {
-  outline: 2px solid rgba(0, 0, 0, 1);
-  outline-offset: 2px;
+  outline: none;
+  opacity: initial 1;
 }
 
 .card__title {
@@ -73,8 +73,8 @@
 }
 
 .card__like-btn:focus {
-  outline: 2px solid rgba(0, 0, 0, 1);
-  outline-offset: 2px;
+  outline: none;
+  opacity: 1;
 }
 
 .card__like-btn_active {
