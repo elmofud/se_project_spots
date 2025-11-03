@@ -15,7 +15,7 @@ this._formselector = settings.FormSelector;
 
 
  showInputError = ( inputEl, errorMsg) => {
-this._errorMsgEl = this.errorMsgFind(inputEl, errorMsg);
+this._errorMsgEl = this.errorMsgFind(inputEl);
   this._errorMsgEl.textContent = errorMsg;
   inputEl.classList.add(this._inputErrorClass);
 };
