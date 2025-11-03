@@ -1,11 +1,17 @@
-const settings = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__submit-btn",
-  inactiveButtonClass: "modal__submit-btn_type_inactive",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
-};
+import {settings} from "../utils/constants.js";
+
+
+export default class Validation {
+  constructor(settings, formEl){
+this._formselector = FormSelector;
+ this._inputSelector = inputSelector;
+  this._submitButtonSelector = submitButtonSelector;
+  this._inactiveButtonClass = inactiveButtonClass;
+  this._inputErrorClass = inputErrorClass;
+  this._errorClass = errorClass;
+  this._formEl = formEl;
+  this._settings = settings;
+  }
 
 const showInputError = (formEl, inputEl, errorMsg, config) => {
   const errorMsgEl = document.querySelector(`#${inputEl.id}-error`);
@@ -74,4 +80,6 @@ const enableValidation = (config) => {
   });
 };
 
-enableValidation(settings);
+this.setEventListeners();
+
+}
