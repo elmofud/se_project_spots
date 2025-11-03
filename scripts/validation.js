@@ -3,23 +3,23 @@ import {settings} from "../utils/constants.js";
 
 export default class Validation {
   constructor(settings, formEl){
-this._formselector = FormSelector;
- this._inputSelector = inputSelector;
-  this._submitButtonSelector = submitButtonSelector;
-  this._inactiveButtonClass = inactiveButtonClass;
-  this._inputErrorClass = inputErrorClass;
-  this._errorClass = errorClass;
+this._formselector = settings.FormSelector;
+ this._inputSelector = settings.inputSelector;
+  this._submitButtonSelector = settings.submitButtonSelector;
+  this._inactiveButtonClass = settings.inactiveButtonClass;
+  this._inputErrorClass = settings.inputErrorClass;
+  this._errorClass = settings.errorClass;
   this._formEl = formEl;
   this._settings = settings;
   }
 
-const showInputError = (formEl, inputEl, errorMsg, config) => {
+ showInputError = (formEl, inputEl, errorMsg, config) => {
   const errorMsgEl = document.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = errorMsg;
-  inputEl.classList.add(config.inputErrorClass);
+  inputEl.classList.add(this._inputErrorClass);
 };
 
-const hideInputError = (formEl, inputEl, config) => {
+ hideInputError = (formEl, inputEl, config) => {
   const errorMsgEl = document.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = "";
   inputEl.classList.remove(config.inputErrorClass);
