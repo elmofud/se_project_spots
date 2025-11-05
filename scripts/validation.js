@@ -4,7 +4,6 @@ const settings = {
   submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__submit-btn_type_inactive",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
 };
 
 const showInputError = (formEl, inputEl, errorMsg, config) => {
@@ -74,4 +73,4 @@ const enableValidation = (config) => {
   });
 };
 
-enableValidation(settings);
+export { settings, enableValidation, resetValidation, disabledBtn };
