@@ -1,4 +1,4 @@
-import "../pages/index.css";
+import "./index.css";
 
 import {
   settings,
@@ -7,7 +7,7 @@ import {
   disabledBtn,
 } from "./validation.js";
 
-const initialCards = [
+const initialCnards = [
   {
     name: "Golden Gate Bridge",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
