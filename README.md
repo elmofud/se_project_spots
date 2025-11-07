@@ -50,8 +50,15 @@ script to closing modal only by clicking outside the modal and not the main moda
 submit button lock:
 script to lock submit button intil input field meet the criteria to become active.
 
+**WebPack**
+
+Import images and fonts from Vanilla HTML to have them imported with Webpack.
+
+PostCSS.config.js:
+Transpile CSS code to enable the use of the most modern features of their language on older browsers.
+
 Image scr through JavaScript:
-script to guide image whithin HTML.
+Script to guide the image within HTML.
 
 **the link to project on GitHub Pages**
 
