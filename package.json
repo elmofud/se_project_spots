@@ -30,8 +30,6 @@
     "type": "git",
     "url": "git+https://github.com/elmofud/se_project_spots.git"
   },
-  "keywords": [],
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/elmofud/se_project_spots/issues"
   },
