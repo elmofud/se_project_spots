@@ -9,7 +9,7 @@ import {
 
 import Api from "../utils/Api.js";
 
-const initialCards = [
+/*const initialCards = [
   {
     name: "Golden Gate Bridge",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
@@ -38,7 +38,7 @@ const initialCards = [
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
-];
+];*/
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
@@ -49,7 +49,10 @@ const api = new Api({
 });
 
 api.getInitialCards().then((cards) => {
-  console.log(cards);
+  cards.forEach((item) => {
+    const cardEl = getCardElement(item);
+    cardsList.prepend(cardEl);
+  });
 });
 
 const editProfileBtn = document.querySelector(".profile__edit-btn");
@@ -200,10 +203,5 @@ function handleAddCardSubmit(evt) {
 }
 
 addCardFormEl.addEventListener("submit", handleAddCardSubmit);
-
-initialCards.forEach((item) => {
-  const cardEl = getCardElement(item);
-  cardsList.prepend(cardEl);
-});
 
 enableValidation(settings);
