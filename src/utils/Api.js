@@ -18,7 +18,22 @@ export default class Api {
       }
       Promise.reject(`Error: ${res.status}`);
     });
-    //.catch(console.error);
+  }
+
+  editUserInfo({ name, about }) {
+    return fext(`${this._baseUrl}/user/me`, {
+      method: "PATCH",
+      headers: this._headers,
+      body: json.stringify({
+        name,
+        about,
+      }),
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      Promise.reject(`Error: ${res.status}`);
+    });
   }
 
   // other methods for working with the API
