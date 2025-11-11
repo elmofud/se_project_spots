@@ -48,12 +48,15 @@ const api = new Api({
   },
 });
 
-api.getInitialCards().then((cards) => {
-  cards.forEach((item) => {
-    const cardEl = getCardElement(item);
-    cardsList.prepend(cardEl);
-  });
-});
+api
+  .getInitialCards()
+  .then((cards) => {
+    cards.forEach((item) => {
+      const cardEl = getCardElement(item);
+      cardsList.prepend(cardEl);
+    });
+  })
+  .catch(console.error);
 
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");

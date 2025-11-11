@@ -1,14 +1,21 @@
 export default class Api {
-  constructor(options) {
+  constructor({ baseUrl, headers }) {
+    this._baseUrl = baseUrl;
+    this._headers = headers;
     // constructor body
   }
 
   getInitialCards() {
-    return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
-      headers: {
-        authorization: "be27ae25-a70e-4b32-aa61-c5f0207b9ede",
-      },
-    }).then((res) => res.json());
+    return fetch(`${this._baseUrl}/cards`, {
+      headers: this._headers,
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(`Error: ${res.status}`);
+      })
+      .catch(console.error);
   }
 
   // other methods for working with the API
