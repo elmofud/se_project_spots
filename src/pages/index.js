@@ -7,6 +7,8 @@ import {
   disabledBtn,
 } from "../scripts/validation.js";
 
+import Api from "../utils/Api.js";
+
 const initialCards = [
   {
     name: "Golden Gate Bridge",
