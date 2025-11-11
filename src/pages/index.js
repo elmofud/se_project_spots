@@ -58,6 +58,11 @@ api
   })
   .catch(console.error);
 
+api.getAppInfo().then(([cards]) => {
+  console.log(cards);
+});
+
+api.getAppInfo().then({ cards });
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
