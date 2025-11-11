@@ -49,18 +49,14 @@ const api = new Api({
 });
 
 api
-  .getInitialCards()
-  .then((cards) => {
+  .getAppInfo()
+  .then(([cards]) => {
     cards.forEach((item) => {
       const cardEl = getCardElement(item);
       cardsList.prepend(cardEl);
     });
   })
   .catch(console.error);
-
-api.getAppInfo().then(([cards]) => {
-  console.log(cards);
-});
 
 api.getAppInfo().then({ cards });
 const editProfileBtn = document.querySelector(".profile__edit-btn");
