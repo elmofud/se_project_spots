@@ -184,6 +184,11 @@ newPostCloseBtn.addEventListener("click", () => {
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
+  api
+    .editUserInfo({ name: "Text", about: "test" })
+    .then((data) => {})
+    .catch(console.error);
+
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
   editProfileFormEl.reset();

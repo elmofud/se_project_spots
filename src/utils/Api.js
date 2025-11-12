@@ -16,15 +16,15 @@ export default class Api {
       if (res.ok) {
         return res.json();
       }
-      Promise.reject(`Error: ${res.status}`);
+      return Promise.reject(`Error: ${res.status}`);
     });
   }
 
   editUserInfo({ name, about }) {
-    return fext(`${this._baseUrl}/user/me`, {
+    return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
-      body: json.stringify({
+      body: JSON.stringify({
         name,
         about,
       }),
@@ -32,7 +32,7 @@ export default class Api {
       if (res.ok) {
         return res.json();
       }
-      Promise.reject(`Error: ${res.status}`);
+      return Promise.reject(`Error: ${res.status}`);
     });
   }
 
