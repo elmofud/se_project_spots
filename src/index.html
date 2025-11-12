@@ -26,19 +26,21 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <button class="profile__avatar-btn">
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-btn">
+              <img
+                src="<%=require('./images/whitePencil.svg')%>"
+                alt="white Pencil Avatar"
+                class="profile__pencil-icon"
+              />
+            </button>
+            <h2 class="visually-hidden">Profile Block</h2>
             <img
-              src="<%=require('./images/whitePencil.svg')%>"
-              alt="white Pencil Avatar"
-              class="profie__pencil-icon"
+              src="<%=require('./images/avatar.jpg')%>"
+              alt="avatar photo"
+              class="profile__avatar"
             />
-          </button>
-          <h2 class="visually-hidden">Profile Block</h2>
-          <img
-            src="<%=require('./images/avatar.jpg')%>"
-            alt="avatar photo"
-            class="profile__avatar"
-          />
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
