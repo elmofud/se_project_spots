@@ -56,6 +56,9 @@ api
       const cardEl = getCardElement(item);
       cardsList.prepend(cardEl);
     });
+    //handle the user`s information
+    //set the src of the avator image
+    //set the textContent of both the text elements
   })
   .catch(console.error);
 
@@ -185,14 +188,19 @@ newPostCloseBtn.addEventListener("click", () => {
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   api
-    .editUserInfo({ name: "Text", about: "test" })
-    .then((data) => {})
+    .editUserInfo({
+      name: editProfileNameInput.value,
+      about: editProfileDescriptionInput.value,
+    })
+    .then((data) => {
+      console.log(data);
+      //todo-use data argument instead of the input values
+      profileNameEl.textContent = data.name;
+      profileDescriptionEl.textContent = data.about;
+      editProfileFormEl.reset();
+      closeModal(editProfileModal);
+    })
     .catch(console.error);
-
-  profileNameEl.textContent = editProfileNameInput.value;
-  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  editProfileFormEl.reset();
-  closeModal(editProfileModal);
 }
 
 editProfileFormEl.addEventListener("submit", handleEditProfileSubmit);

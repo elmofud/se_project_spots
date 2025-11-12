@@ -6,6 +6,7 @@ export default class Api {
   }
 
   getAppInfo() {
+    //todo - call getuserInfo it in this array
     return Promise.all([this.getInitialCards()]);
   }
 
