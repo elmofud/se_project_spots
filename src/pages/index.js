@@ -50,12 +50,14 @@ const api = new Api({
 
 api
   .getAppInfo()
-  .then(([cards]) => {
+  .then(([me, cards]) => {
     console.log(cards);
     cards.forEach((item) => {
       const cardEl = getCardElement(item);
       cardsList.prepend(cardEl);
     });
+    profileNameEl.textContent = me.name;
+    profileDescriptionEl.textContent = me.about;
     //handle the user`s information
     //set the src of the avator image
     //set the textContent of both the text elements
@@ -194,7 +196,6 @@ function handleEditProfileSubmit(evt) {
     })
     .then((data) => {
       console.log(data);
-      //todo-use data argument instead of the input values
       profileNameEl.textContent = data.name;
       profileDescriptionEl.textContent = data.about;
       editProfileFormEl.reset();
