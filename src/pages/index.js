@@ -76,6 +76,7 @@ const editProfileNameInput = editProfileModal.querySelector(
 
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
+const profileAvatarBtn = document.querySelector(".profile__avatar-btn");
 
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
@@ -89,7 +90,7 @@ const newPostLinkInput = addCardFormEl.querySelector("#image-link-input");
 const avatarModal = document.querySelector("#avatar-modal");
 const avatarform = avatarModal.querySelector(".modal__form");
 const avatarSubmitBtn = avatarModal.querySelector(".modal__submit-gtn");
-const avatarModalCloseBtn = avatarModal.querySelector("#modal__close-btn");
+const avatarCloseBtn = avatarModal.querySelector(".modal__close-btn");
 
 const previewModal = document.querySelector("#preview-modal");
 const previewCloseBtn = previewModal.querySelector(
@@ -188,8 +189,16 @@ newPostBtn.addEventListener("click", () => {
   openModal(newPostModal);
 });
 
+profileAvatarBtn.addEventListener("clik", () => {
+  openModal(avatarModal);
+});
+
 newPostCloseBtn.addEventListener("click", () => {
   closeModal(newPostModal);
+});
+
+avatarCloseBtn.addEventListener("click", () => {
+  closeModal(avatarModal);
 });
 
 function handleEditProfileSubmit(evt) {
