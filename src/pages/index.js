@@ -86,6 +86,11 @@ const cardSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
 const newPostCaptionInput = addCardFormEl.querySelector("#caption-input");
 const newPostLinkInput = addCardFormEl.querySelector("#image-link-input");
 
+const avatarModal = document.querySelector("#avatar-modal");
+const avatarform = avatarModal.querySelector(".modal__form");
+const avatarSubmitBtn = avatarModal.querySelector(".modal__submit-gtn");
+const avatarModalCloseBtn = avatarModal.querySelector("#modal__close-btn");
+
 const previewModal = document.querySelector("#preview-modal");
 const previewCloseBtn = previewModal.querySelector(
   ".modal__close-btn_type_preview"
