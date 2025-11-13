@@ -58,9 +58,7 @@ api
     });
     profileNameEl.textContent = me.name;
     profileDescriptionEl.textContent = me.about;
-    //handle the user`s information
-    //set the src of the avator image
-    //set the textContent of both the text elements
+    profileAvatarImage.src = me.avatar;
   })
   .catch(console.error);
 
@@ -77,6 +75,7 @@ const editProfileNameInput = editProfileModal.querySelector(
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 const profileAvatarBtn = document.querySelector(".profile__avatar-btn");
+const profileAvatarImage = document.querySelector(".profile__avatar");
 
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
@@ -204,7 +203,14 @@ avatarCloseBtn.addEventListener("click", () => {
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
-  console.log(avatarInput.value);
+  api
+    .editAvatarInfo(avatarInput.value)
+    .then((data) => {
+      profileAvatarImage.src = data.avatar;
+      avatarForm.reset();
+      closeModal(avatarModal);
+    })
+    .catch(console.error);
 }
 
 avatarForm.addEventListener("submit", handleAvatarSubmit);
@@ -217,7 +223,6 @@ function handleEditProfileSubmit(evt) {
       about: editProfileDescriptionInput.value,
     })
     .then((data) => {
-      console.log(data);
       profileNameEl.textContent = data.name;
       profileDescriptionEl.textContent = data.about;
       editProfileFormEl.reset();

@@ -46,7 +46,7 @@ export default class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
-  editAvatarInfo({ avatar }) {
+  editAvatarInfo(avatar) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
