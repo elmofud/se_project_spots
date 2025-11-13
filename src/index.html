@@ -188,10 +188,17 @@
       </div>
     </div>
     <div id="delete-modal" class="modal modal_is-opened">
-      <div class="modal__container">
-        <h2 class="modal__title">Are you sure you want to delete this image</h2>
-        <button type="button" class="modal__close-btn"></button>
-        <form class="modal__form" id="delete-form">
+      <div class="modal__container modal__container--dele">
+        <div class="modal__row">
+          <button
+            type="button"
+            class="modal__close-btn modal__close-btn_type_delete"
+          ></button>
+          <h2 class="modal__title">
+            Are you sure you want to delete this image
+          </h2>
+        </div>
+        <form class="modal__form modal_form_orientation" id="delete-form">
           <button type="submit" class="modal__submit-btn">Delete</button>
           <button type="button" class="modal__cancel-btn">Cancel</button>
         </form>

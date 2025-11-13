@@ -65,6 +65,12 @@
   flex-direction: column;
 }
 
+.modal_form_orientation {
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
 .modal__label {
   display: block;
   margin: 0 0 32px;
@@ -174,6 +180,24 @@
 }
 
 .modal__close-btn_type_preview:hover {
+  background: transparent url(../images/closeGrayVariant.svg) no-repeat center
+    center/cover;
+}
+
+.modal__container--delete {
+  position: relative;
+  border-radius: 8px;
+}
+
+.modal__close-btn_type_delete {
+  position: absolute;
+  right: -52.5px;
+  top: 0;
+  background: transparent url(../images/previewCloseIcon.svg) no-repeat center
+    center/cover;
+}
+
+.modal__close-btn_type_delete:hover {
   background: transparent url(../images/closeGrayVariant.svg) no-repeat center
     center/cover;
 }
