@@ -88,9 +88,10 @@ const newPostCaptionInput = addCardFormEl.querySelector("#caption-input");
 const newPostLinkInput = addCardFormEl.querySelector("#image-link-input");
 
 const avatarModal = document.querySelector("#avatar-modal");
-const avatarform = avatarModal.querySelector(".modal__form");
+const avatarForm = avatarModal.querySelector(".modal__form");
 const avatarSubmitBtn = avatarModal.querySelector(".modal__submit-gtn");
 const avatarCloseBtn = avatarModal.querySelector(".modal__close-btn");
+const avatarInput = avatarForm.querySelector("#profile-avatar-input");
 
 const previewModal = document.querySelector("#preview-modal");
 const previewCloseBtn = previewModal.querySelector(
@@ -189,7 +190,7 @@ newPostBtn.addEventListener("click", () => {
   openModal(newPostModal);
 });
 
-profileAvatarBtn.addEventListener("clik", () => {
+profileAvatarBtn.addEventListener("click", () => {
   openModal(avatarModal);
 });
 
@@ -200,6 +201,13 @@ newPostCloseBtn.addEventListener("click", () => {
 avatarCloseBtn.addEventListener("click", () => {
   closeModal(avatarModal);
 });
+
+function handleAvatarSubmit(evt) {
+  evt.preventDefault();
+  console.log(avatarInput.value);
+}
+
+avatarForm.addEventListener("submit", handleAvatarSubmit);
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
