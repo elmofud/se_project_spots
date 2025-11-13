@@ -119,6 +119,25 @@
   background-color: rgba(33, 33, 33, 0.5);
 }
 
+.modal__cancel-btn {
+  max-width: 156px;
+  padding: 18px 32px;
+  background-color: rgba(33, 33, 33, 1);
+  border-radius: 8px;
+  border: none;
+  color: rgba(252, 245, 229, 1);
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.modal__cancel-btn:hover {
+  opacity: 0.8;
+}
+
+.modal__cancel-btn_type_inactive {
+  background-color: rgba(33, 33, 33, 0.5);
+}
+
 .modal__image-container {
   position: relative;
   border-radius: 8px;
