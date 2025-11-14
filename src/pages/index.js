@@ -90,7 +90,7 @@ const cardSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
 const cardDeleteModal = document.querySelector("#delete-modal");
 const cardDeleteCloseBtn = cardDeleteModal.querySelector(".modal__close-btn");
 const cardCancelBtn = cardDeleteModal.querySelector(".modal__cancel-btn");
-const cardDeleteBtn = cardDeleteModal.querySelector(".modal__submit-btn");
+const cardDeleteSubmitBtn = cardDeleteModal.querySelector(".modal__submit-btn");
 
 const avatarModal = document.querySelector("#avatar-modal");
 const avatarForm = avatarModal.querySelector(".modal__form");
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
   closeModal(editProfileModal);
   closeModal(newPostModal);
 });
-
+let selectedCard, selectedCardId;
 function handleDeleteCard(evt) {
   // evt.target.closest(".card").remove();
   openModal(cardDeleteModal);
@@ -172,10 +172,12 @@ function getCardElement(data) {
   cardLikeBtnEl.addEventListener("click", handleLike);
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
-  cardDeleteBtnEl.addEventListener("click", handleDeleteCard);
+  cardDeleteBtnEl.addEventListener("click", (evt) =>
+     handleDeleteCard(cardElement, data));
 
-  cardImageEl.addEventListener("click", handleImageCard);
-  setTimeout(handleImageCard(data), 0);
+cardImageEl.addEventListener("click", (evt) => handleImageCard(data));
+
+
   return cardElement;
 }
 
@@ -218,7 +220,7 @@ cardCancelBtn.addEventListener("click", () => {
   closeModal(cardDeleteModal);
 });
 
-cardDeleteBtn.addEventListener("click", () => {});
+cardDeleteSubmitBtn.addEventListener("click", () => {});
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
