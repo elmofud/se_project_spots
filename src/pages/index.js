@@ -91,6 +91,7 @@ const cardDeleteModal = document.querySelector("#delete-modal");
 const cardDeleteCloseBtn = cardDeleteModal.querySelector(".modal__close-btn");
 const cardCancelBtn = cardDeleteModal.querySelector(".modal__cancel-btn");
 const cardDeleteSubmitBtn = cardDeleteModal.querySelector(".modal__submit-btn");
+const cardDeleteForm = cardDeleteModal.querySelector("#delete-form")
 
 const avatarModal = document.querySelector("#avatar-modal");
 const avatarForm = avatarModal.querySelector(".modal__form");
@@ -144,10 +145,29 @@ document.addEventListener("DOMContentLoaded", () => {
   closeModal(editProfileModal);
   closeModal(newPostModal);
 });
+
 let selectedCard, selectedCardId;
-function handleDeleteCard(evt) {
-  // evt.target.closest(".card").remove();
+
+function handleDeleteSubmit(evt) {
+   evt.preventDefault();
+   api.deleteCardInfo(selectedCardId)
+   .then((selectedCardId) => {
+      selectedCardId.remove();
+      cardDeleteForm.reset();
+      closeModal(cardDeleteModal);
+    })
+    .catch(console.error);
+}
+
+
+
+function handleDeleteCard(cardElement, cardId) {
+  selectedCard = cardElement;
+  selectedCardId = cardId;
   openModal(cardDeleteModal);
+
+
+
 }
 
 function handleLike(evt) {
@@ -173,7 +193,7 @@ function getCardElement(data) {
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtnEl.addEventListener("click", (evt) =>
-     handleDeleteCard(cardElement, data));
+     handleDeleteCard(cardElement, data.id));
 
 cardImageEl.addEventListener("click", (evt) => handleImageCard(data));
 
@@ -219,6 +239,9 @@ avatarCloseBtn.addEventListener("click", () => {
 cardCancelBtn.addEventListener("click", () => {
   closeModal(cardDeleteModal);
 });
+cardDeleteCloseBtn.addEventListener("click", ( ) => {
+  closeModal(cardDeleteModal)
+});
 
 cardDeleteSubmitBtn.addEventListener("click", () => {});
 
@@ -235,6 +258,7 @@ function handleAvatarSubmit(evt) {
 }
 
 avatarForm.addEventListener("submit", handleAvatarSubmit);
+cardDeleteForm.addEventListener("submit", handleDeleteSubmit);
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
@@ -267,6 +291,8 @@ function handleAddCardSubmit(evt) {
   disabledBtn(cardSubmitBtn, settings);
   closeModal(newPostModal);
 }
+
+function handleDeleteSubmit() {}
 
 addCardFormEl.addEventListener("submit", handleAddCardSubmit);
 
