@@ -8,6 +8,7 @@ import {
 } from "../scripts/validation.js";
 
 import Api from "../utils/Api.js";
+import { data } from "autoprefixer";
 
 /*const initialCards = [
   {
@@ -183,10 +184,12 @@ function handleImageCard(data) {
 }
 
 function getCardElement(data) {
+  console.log("creating card with data:",data);
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   cardImageEl.src = data.link;
+  console.log("data image sent:",data.link);
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
   const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
@@ -248,8 +251,10 @@ cardDeleteSubmitBtn.addEventListener("click", () => {});
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
+  console.log("Avatar input value:", avatarInput.value);
   api
     .editAvatarInfo(avatarInput.value)
+
     .then((data) => {
       profileAvatarImage.src = data.avatar;
       avatarForm.reset();
@@ -280,17 +285,32 @@ editProfileFormEl.addEventListener("submit", handleEditProfileSubmit);
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  const inputValue = {
-    name: newPostCaptionInput.value,
-    link: newPostLinkInput.value,
-  };
-
-  const cardEl = getCardElement(inputValue);
+api.addCardInfo({
+  name: newPostCaptionInput.value,
+  link: newPostLinkInput.value,
+})
+.then((data) => {
+  const cardEl = getCardElement(data);
   cardsList.prepend(cardEl);
   evt.target.reset();
   disabledBtn(cardSubmitBtn, settings);
   closeModal(newPostModal);
+})
+ .catch(console.error);
 }
+
+
+//   const inputValue = {
+//     name: newPostCaptionInput.value,
+//     link: newPostLinkInput.value,
+//   };
+
+//   const cardEl = getCardElement(data);
+//   cardsList.prepend(cardEl);
+//   evt.target.reset();
+//   disabledBtn(cardSubmitBtn, settings);
+//   closeModal(newPostModal);
+// }
 
 addCardFormEl.addEventListener("submit", handleAddCardSubmit);
 
