@@ -150,25 +150,26 @@ let selectedCard, selectedCardId;
 
 function handleDeleteSubmit(evt) {
    evt.preventDefault();
+   console.log("about to remove id:", selectedCardId);
+   console.log("about to remove:", selectedCard);
    api.deleteCardInfo(selectedCardId)
-   .then((selectedCardId) => {
-      selectedCardId.remove();
-      cardDeleteForm.reset();
+   .then((res) =>{
+         selectedCard.remove();
       closeModal(cardDeleteModal);
-    })
+   })
     .catch(console.error);
 }
+cardDeleteForm.addEventListener("submit", handleDeleteSubmit);
 
 
 
-function handleDeleteCard(cardElement, cardId) {
+function handleDeleteCard(cardElement, data) {
   selectedCard = cardElement;
-  selectedCardId = cardId;
+  selectedCardId = data._id;
   openModal(cardDeleteModal);
-
-
-
 }
+
+
 
 function handleLike(evt) {
   evt.target.classList.toggle("card_like-button_active");
@@ -193,7 +194,7 @@ function getCardElement(data) {
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtnEl.addEventListener("click", (evt) =>
-     handleDeleteCard(cardElement, data.id));
+     handleDeleteCard(cardElement, data));
 
 cardImageEl.addEventListener("click", (evt) => handleImageCard(data));
 
@@ -258,7 +259,6 @@ function handleAvatarSubmit(evt) {
 }
 
 avatarForm.addEventListener("submit", handleAvatarSubmit);
-cardDeleteForm.addEventListener("submit", handleDeleteSubmit);
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
@@ -291,8 +291,6 @@ function handleAddCardSubmit(evt) {
   disabledBtn(cardSubmitBtn, settings);
   closeModal(newPostModal);
 }
-
-function handleDeleteSubmit() {}
 
 addCardFormEl.addEventListener("submit", handleAddCardSubmit);
 
