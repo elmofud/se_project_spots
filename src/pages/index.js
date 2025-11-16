@@ -94,6 +94,7 @@ const cardCancelBtn = cardDeleteModal.querySelector(".modal__cancel-btn");
 const cardDeleteSubmitBtn = cardDeleteModal.querySelector(".modal__submit-btn");
 const cardDeleteForm = cardDeleteModal.querySelector("#delete-form")
 
+
 const avatarModal = document.querySelector("#avatar-modal");
 const avatarForm = avatarModal.querySelector(".modal__form");
 const avatarSubmitBtn = avatarModal.querySelector(".modal__submit-btn");
@@ -172,9 +173,32 @@ function handleDeleteCard(cardElement, data) {
 
 
 
-function handleLike(evt) {
-  evt.target.classList.toggle("card_like-button_active");
+function handleLike(evt,selectedCardId) {
+  likeBtn = evt.target;
+  evt.preventDefault();
+  isliked= likeBtn.classList.contains("card_like-button_active");
+  api.handleLikes(selectedCardId, isliked)
+  .then((res) => {
+    isLiked = res.IsLiked;
+    if (islked) {
+      likeBtn.classList.remove("card_like-button_active");
+    } else {
+      likeBtn.classList.add("card_like-button_active");
+    }
+  })
+  .catch((error) => {
+    console.error("Failed to update like", error);
+  });
 }
+
+
+  // remove evt.target.classList.toggle("card_like-button_active");
+  // 1, check wither crd is cirrently liked or not
+  // const isliked = ???;
+  // call the changeLikedStatus method. passing it the appropriate arguments
+  // 3. handle the response ).them an catch
+  // 4. in rhw .rhwnn, TOGGLW xricw CLass
+// }
 
 function handleImageCard(data) {
   previewImageEl.src = data.link;
@@ -193,13 +217,13 @@ function getCardElement(data) {
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
   const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
-  cardLikeBtnEl.addEventListener("click", handleLike);
+  cardLikeBtnEl.addEventListener("click",() => {handleLike(evt, data._id)} );
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
-  cardDeleteBtnEl.addEventListener("click", (evt) =>
+  cardDeleteBtnEl.addEventListener("click", () =>
      handleDeleteCard(cardElement, data));
 
-cardImageEl.addEventListener("click", (evt) => handleImageCard(data));
+cardImageEl.addEventListener("click", () => handleImageCard(data));
 
 
   return cardElement;

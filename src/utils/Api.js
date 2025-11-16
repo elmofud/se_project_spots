@@ -92,6 +92,21 @@ export default class Api {
     });
 
   }
+     handleLikes(selectedCardId, isliked) {
+    return fetch(`${this._baseUrl}/cards/${selectedCardId}/likes`, {
+      method: isliked ? "DELETE" : "PUT",
+      headers: this._headers,
+    })
+    .then((res) => {
+      if (res.ok) {
+
+        return res.json();
+      }
+      return Promise.reject(`Error: ${res.status}`);
+    });
+  }
+
+
 
   // other methods for working with the API
 }
