@@ -84,6 +84,9 @@ export default class Api {
       body: JSON.stringify({
         avatar,
       }),
+
+
+
     }).then((res) => {
       if (res.ok) {
         return res.json();
@@ -92,9 +95,9 @@ export default class Api {
     });
 
   }
-     handleLikes(selectedCardId, isliked) {
+     handleLikes( isLiked, selectedCardId) {
     return fetch(`${this._baseUrl}/cards/${selectedCardId}/likes`, {
-      method: isliked ? "DELETE" : "PUT",
+      method: isLiked ? "DELETE" : "PUT",
       headers: this._headers,
     })
     .then((res) => {
@@ -105,6 +108,9 @@ export default class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
+
+
+
 
 
 

@@ -174,16 +174,17 @@ function handleDeleteCard(cardElement, data) {
 
 
 function handleLike(evt,selectedCardId) {
-  likeBtn = evt.target;
   evt.preventDefault();
-  isliked= likeBtn.classList.contains("card_like-button_active");
-  api.handleLikes(selectedCardId, isliked)
+  const likeBtn = evt.target;
+  let isLiked= likeBtn.classList.contains("card__like-btn_active");
+  api.handleLikes(isLiked, selectedCardId)
   .then((res) => {
     isLiked = res.isLiked;
-    if (isliked) {
-      likeBtn.classList.add("card_like-button_active");
+    if (isLiked) {
+      likeBtn.classList.add("card__like-btn_active");
     } else {
-      likeBtn.classList.remove("card_like-button_active");
+      likeBtn.classList.remove("card__like-btn_active");
+
     }
   })
   .catch((error) => {
@@ -208,7 +209,7 @@ function getCardElement(data) {
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
   const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
-  cardLikeBtnEl.addEventListener("click",(evt) => {handleLike(evt, data )} );
+  cardLikeBtnEl.addEventListener("click",(evt) => {handleLike(evt, data._id)} );
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtnEl.addEventListener("click", () =>
