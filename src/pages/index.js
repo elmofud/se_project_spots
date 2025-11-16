@@ -179,26 +179,17 @@ function handleLike(evt,selectedCardId) {
   isliked= likeBtn.classList.contains("card_like-button_active");
   api.handleLikes(selectedCardId, isliked)
   .then((res) => {
-    isLiked = res.IsLiked;
-    if (islked) {
-      likeBtn.classList.remove("card_like-button_active");
-    } else {
+    isLiked = res.isLiked;
+    if (isliked) {
       likeBtn.classList.add("card_like-button_active");
+    } else {
+      likeBtn.classList.remove("card_like-button_active");
     }
   })
   .catch((error) => {
     console.error("Failed to update like", error);
   });
 }
-
-
-  // remove evt.target.classList.toggle("card_like-button_active");
-  // 1, check wither crd is cirrently liked or not
-  // const isliked = ???;
-  // call the changeLikedStatus method. passing it the appropriate arguments
-  // 3. handle the response ).them an catch
-  // 4. in rhw .rhwnn, TOGGLW xricw CLass
-// }
 
 function handleImageCard(data) {
   previewImageEl.src = data.link;
@@ -217,7 +208,7 @@ function getCardElement(data) {
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
   const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
-  cardLikeBtnEl.addEventListener("click",() => {handleLike(evt, data._id)} );
+  cardLikeBtnEl.addEventListener("click",(evt) => {handleLike(evt, data )} );
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
   cardDeleteBtnEl.addEventListener("click", () =>
