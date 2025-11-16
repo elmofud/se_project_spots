@@ -8,7 +8,6 @@ import {
 } from "../scripts/validation.js";
 
 import Api from "../utils/Api.js";
-import { data } from "autoprefixer";
 
 /*const initialCards = [
   {
@@ -179,8 +178,7 @@ function handleLike(evt,selectedCardId) {
   let isLiked= likeBtn.classList.contains("card__like-btn_active");
   api.handleLikes(isLiked, selectedCardId)
   .then((res) => {
-    isLiked = res.isLiked;
-    if (isLiked) {
+    if (res.isLiked) {
       likeBtn.classList.add("card__like-btn_active");
     } else {
       likeBtn.classList.remove("card__like-btn_active");

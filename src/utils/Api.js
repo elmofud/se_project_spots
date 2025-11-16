@@ -95,7 +95,7 @@ export default class Api {
     });
 
   }
-     handleLikes( isLiked, selectedCardId) {
+     handleLikes(isLiked, selectedCardId) {
     return fetch(`${this._baseUrl}/cards/${selectedCardId}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
       headers: this._headers,
