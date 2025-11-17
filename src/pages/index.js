@@ -8,7 +8,7 @@ import {
 } from "../scripts/validation.js";
 
 import Api from "../utils/Api.js";
-import { submitBtn } from "../utils/helpers.js"
+import { setButtonText} from "../utils/helpers.js"
 
 /*const initialCards = [
   {
@@ -72,6 +72,7 @@ const editProfileDescriptionInput =
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
+const editProfileSubmitBtn = editProfileModal.querySelector(".modal__submit-btn");
 
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
@@ -207,6 +208,7 @@ function getCardElement(data) {
   console.log("data image sent:",data.link);
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
+  console.log("cardelement:",cardElement);
   const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
   cardLikeBtnEl.addEventListener("click",(evt) => {handleLike(evt, data._id)} );
 
@@ -282,6 +284,9 @@ avatarForm.addEventListener("submit", handleAvatarSubmit);
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
+  const submitBtn= evt.submitter;
+  setButtonText(submitBtn, true);
+
   api
     .editUserInfo({
       name: editProfileNameInput.value,
@@ -293,7 +298,10 @@ function handleEditProfileSubmit(evt) {
       editProfileFormEl.reset();
       closeModal(editProfileModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      setButtonText(submitBtn, false);
+    })
 }
 
 editProfileFormEl.addEventListener("submit", handleEditProfileSubmit);
