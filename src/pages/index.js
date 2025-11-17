@@ -153,14 +153,17 @@ let selectedCard, selectedCardId;
 
 function handleDeleteSubmit(evt) {
    evt.preventDefault();
-   console.log("about to remove id:", selectedCardId);
-   console.log("about to remove:", selectedCard);
+   const deleteBtn = evt.submitter;
+   setButtonText(deleteBtn, true, "Delete", "Deleting...")
    api.deleteCardInfo(selectedCardId)
    .then((res) =>{
          selectedCard.remove();
       closeModal(cardDeleteModal);
    })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(()=> {
+      setButtonText(deleteBtn, false, "Delete", "Deleting,,,")
+    })
 }
 cardDeleteForm.addEventListener("submit", handleDeleteSubmit);
 
@@ -268,7 +271,9 @@ cardDeleteSubmitBtn.addEventListener("click", () => {});
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
-  console.log("Avatar input value:", avatarInput.value);
+  const avatarBtn = evt.submitter;
+  setButtonText(avatarBtn,true);
+
   api
     .editAvatarInfo(avatarInput.value)
 
@@ -277,15 +282,18 @@ function handleAvatarSubmit(evt) {
       avatarForm.reset();
       closeModal(avatarModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() =>{
+      setButtonText(avatarBtn, false);
+    });
 }
 
 avatarForm.addEventListener("submit", handleAvatarSubmit);
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
-  const submitBtn= evt.submitter;
-  setButtonText(submitBtn, true);
+  const editSubmitBtn= evt.submitter;
+  setButtonText(editSubmitBtn, true);
 
   api
     .editUserInfo({
@@ -300,14 +308,17 @@ function handleEditProfileSubmit(evt) {
     })
     .catch(console.error)
     .finally(() => {
-      setButtonText(submitBtn, false);
-    })
+      setButtonText(editSubmitBtn, false);
+    });
 }
 
 editProfileFormEl.addEventListener("submit", handleEditProfileSubmit);
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
+  const addCardBtn = evt.submitter;
+  setButtonText( addCardBtn, true);
+
 api.addCardInfo({
   name: newPostCaptionInput.value,
   link: newPostLinkInput.value,
@@ -319,21 +330,11 @@ api.addCardInfo({
   disabledBtn(cardSubmitBtn, settings);
   closeModal(newPostModal);
 })
- .catch(console.error);
+ .catch(console.error)
+ .finally(() => {
+      setButtonText(addCardBtn, false);
+    });
 }
-
-
-//   const inputValue = {
-//     name: newPostCaptionInput.value,
-//     link: newPostLinkInput.value,
-//   };
-
-//   const cardEl = getCardElement(data);
-//   cardsList.prepend(cardEl);
-//   evt.target.reset();
-//   disabledBtn(cardSubmitBtn, settings);
-//   closeModal(newPostModal);
-// }
 
 addCardFormEl.addEventListener("submit", handleAddCardSubmit);
 
