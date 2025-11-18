@@ -9,6 +9,7 @@ import {
 
 import Api from "../utils/Api.js";
 import { setButtonText } from "../utils/helpers.js";
+import { modalOpenCloseBtn } from "../utils/helpers.js";
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
@@ -124,7 +125,7 @@ function handleDeleteSubmit(evt) {
    const deleteBtn = evt.submitter;
    setButtonText(deleteBtn, true, "Delete", "Deleting ...")
    api.deleteCardInfo(selectedCardId)
-   .then((res) =>{
+   .then(() =>{
          selectedCard.remove();
       closeModal(cardDeleteModal);
    })
@@ -203,36 +204,17 @@ editProfileBtn.addEventListener("click", () => {
   openModal(editProfileModal);
 });
 
-previewCloseBtn.addEventListener("click", () => {
-  closeModal(previewModal);
-});
+modalOpenCloseBtn(previewCloseBtn, closeModal, previewModal);
+modalOpenCloseBtn(editProfileCloseBtn, closeModal, editProfileModal);
+modalOpenCloseBtn(newPostCloseBtn, closeModal, newPostModal);
+modalOpenCloseBtn(avatarCloseBtn, closeModal, avatarModal);
+modalOpenCloseBtn(cardCancelBtn, closeModal,cardDeleteModal);
+modalOpenCloseBtn(cardDeleteCloseBtn, closeModal,cardDeleteModal);
 
-editProfileCloseBtn.addEventListener("click", () => {
-  closeModal(editProfileModal);
-});
+modalOpenCloseBtn(newPostBtn,  openModal, newPostModal);
+modalOpenCloseBtn(profileAvatarBtn, openModal, avatarModal);
 
-newPostBtn.addEventListener("click", () => {
-  openModal(newPostModal);
-});
 
-profileAvatarBtn.addEventListener("click", () => {
-  openModal(avatarModal);
-});
-
-newPostCloseBtn.addEventListener("click", () => {
-  closeModal(newPostModal);
-});
-
-avatarCloseBtn.addEventListener("click", () => {
-  closeModal(avatarModal);
-});
-
-cardCancelBtn.addEventListener("click", () => {
-  closeModal(cardDeleteModal);
-});
-cardDeleteCloseBtn.addEventListener("click", () => {
-  closeModal(cardDeleteModal);
-});
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
