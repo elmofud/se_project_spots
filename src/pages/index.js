@@ -50,9 +50,7 @@ const profileAvatarImage = document.querySelector(".profile__avatar");
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
-
 const addCardFormEl = newPostModal.querySelector(".modal__form");
-
 const newPostCaptionInput = addCardFormEl.querySelector("#caption-input");
 const newPostLinkInput = addCardFormEl.querySelector("#image-link-input");
 
@@ -144,8 +142,6 @@ function handleDeleteCard(cardElement, data) {
   openModal(cardDeleteModal);
 }
 
-
-
 function handleLike(evt,selectedCardId) {
   evt.preventDefault();
   const likeBtn = evt.target;
@@ -213,8 +209,6 @@ modalOpenCloseBtn(cardDeleteCloseBtn, closeModal,cardDeleteModal);
 
 modalOpenCloseBtn(newPostBtn,  openModal, newPostModal);
 modalOpenCloseBtn(profileAvatarBtn, openModal, avatarModal);
-
-
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();

@@ -4,7 +4,6 @@ export default class Api {
     this._headers = headers;
   }
 
-
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
@@ -90,6 +89,7 @@ export default class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
+
      handleLikes(isLiked, selectedCardId) {
     return fetch(`${this._baseUrl}/cards/${selectedCardId}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
@@ -102,10 +102,4 @@ export default class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
-
-
-
-
-
-
 }
