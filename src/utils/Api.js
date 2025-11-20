@@ -1,3 +1,5 @@
+import { handleResponce } from "./helpers";
+
 export default class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
@@ -7,12 +9,7 @@ export default class Api {
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(handleResponce);
   }
 
   getAppInfo() {
@@ -22,12 +19,7 @@ export default class Api {
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(handleResponce);
   }
 
   editUserInfo({ name, about }) {
@@ -38,25 +30,14 @@ export default class Api {
         name,
         about,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(handleResponce);
   }
 
   deleteCardInfo(selectedCardId) {
     return fetch(`${this._baseUrl}/cards/${selectedCardId}`, {
       method: "DELETE",
       headers: this._headers,
-    })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(handleResponce);
   }
 
   addCardInfo({name, link}) {
@@ -67,12 +48,7 @@ export default class Api {
         name,
         link,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+   }).then(handleResponce);
   }
 
    editAvatarInfo(avatar) {
@@ -82,24 +58,13 @@ export default class Api {
       body: JSON.stringify({
         avatar,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(handleResponce);
   }
 
      handleLikes(isLiked, selectedCardId) {
     return fetch(`${this._baseUrl}/cards/${selectedCardId}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
       headers: this._headers,
-    })
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Error: ${res.status}`);
-    });
+    }).then(handleResponce);
   }
 }

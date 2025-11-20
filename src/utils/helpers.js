@@ -16,3 +16,10 @@ export function modalOpenCloseBtn(btnEl, toggleModal, modalField)
   toggleModal(modalField);
 });
 }
+
+export function handleResponce(res) {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error: ${res.status}`);
+}
