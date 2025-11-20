@@ -35,7 +35,7 @@
 .modal__row {
   display: flex;
   justify-content: space-between;
-  margin: 0 0 32px;
+  margin: 0 0 36px;
 }
 
 .modal__close-btn {
@@ -61,6 +61,11 @@
   text-align: center;
 }
 
+.modal__title--avatar {
+  width: 285px;
+  height: 32px;
+}
+
 .modal__form {
   display: flex;
   flex-direction: column;
@@ -75,6 +80,7 @@
 .modal__label {
   display: block;
   margin: 0 0 32px;
+
 }
 
 .modal__input {
@@ -268,10 +274,13 @@ opacity:1;
 
   .modal__label {
     margin: 0 0 24px;
+    color: rgba(33, 33, 33, 0.7);
+
   }
 
   .modal__input::placeholder {
     font-size: 16px;
+
   }
 
   .modal__submit-btn {

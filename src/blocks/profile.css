@@ -64,9 +64,6 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   font-size: 32px;
-  font-weight: 500;
-  line-height: 1;
-  color: rgba(33, 33, 33, 1);
 }
 
 .profile__description {
