@@ -1,4 +1,4 @@
-import { handleResponce } from "./helpers";
+import { handleResponse } from "./helpers.js";
 
 export default class Api {
   constructor({ baseUrl, headers }) {
@@ -9,7 +9,7 @@ export default class Api {
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
-    }).then(handleResponce);
+    }).then(handleResponse);
   }
 
   getAppInfo() {
@@ -19,7 +19,7 @@ export default class Api {
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
-    }).then(handleResponce);
+    }).then(handleResponse);
   }
 
   editUserInfo({ name, about }) {
@@ -30,14 +30,14 @@ export default class Api {
         name,
         about,
       }),
-    }).then(handleResponce);
+    }).then(handleResponse);
   }
 
   deleteCardInfo(selectedCardId) {
     return fetch(`${this._baseUrl}/cards/${selectedCardId}`, {
       method: "DELETE",
       headers: this._headers,
-    }).then(handleResponce);
+    }).then(handleResponse);
   }
 
   addCardInfo({name, link}) {
@@ -48,7 +48,7 @@ export default class Api {
         name,
         link,
       }),
-   }).then(handleResponce);
+   }).then(handleResponse);
   }
 
    editAvatarInfo(avatar) {
@@ -58,13 +58,13 @@ export default class Api {
       body: JSON.stringify({
         avatar,
       }),
-    }).then(handleResponce);
+    }).then(handleResponse);
   }
 
      handleLikes(isLiked, selectedCardId) {
     return fetch(`${this._baseUrl}/cards/${selectedCardId}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
       headers: this._headers,
-    }).then(handleResponce);
+    }).then(handleResponse);
   }
 }

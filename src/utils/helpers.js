@@ -17,7 +17,7 @@ export function modalOpenCloseBtn(btnEl, toggleModal, modalField)
 });
 }
 
-export function handleResponce(res) {
+export function handleResponse(res) {
   if (res.ok) {
     return res.json();
   }
