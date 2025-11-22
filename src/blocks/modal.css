@@ -35,7 +35,7 @@
 .modal__row {
   display: flex;
   justify-content: space-between;
-  margin: 0 0 32px;
+  margin: 0 0 36px;
 }
 
 .modal__close-btn {
@@ -58,6 +58,16 @@
 .modal__title {
   margin: 0;
   font-size: 32px;
+  text-align: center;
+}
+
+.modal__title--avatar {
+  width: 285px;
+  height: 32px;
+}
+
+.modal__title--font {
+  font-size: 24px;
 }
 
 .modal__form {
@@ -65,9 +75,16 @@
   flex-direction: column;
 }
 
+.modal__form--orientation {
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
 .modal__label {
   display: block;
   margin: 0 0 32px;
+
 }
 
 .modal__input {
@@ -115,7 +132,39 @@
   opacity: 0.8;
 }
 
+.modal__submit-btn_type_delete {
+background-color: rgba(255, 101, 101, 1);
+opacity: 1;
+max-width: 156px;
+width: 156px;
+}
+
+.modal__submit-btn_type_delete:hover {
+background-color: rgba(255, 51, 51, 1);
+opacity:1;
+}
+
 .modal__submit-btn_type_inactive {
+  background-color: rgba(33, 33, 33, 0.5);
+}
+
+.modal__cancel-btn {
+  max-width: 156px;
+  background-color: rgb(255, 255, 255);
+  width: 156px;
+  padding: 18px 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(33, 33, 33, 1);
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.modal__cancel-btn:hover {
+  background-color: rgba(33, 33, 33, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.modal__cancel-btn_type_inactive {
   background-color: rgba(33, 33, 33, 0.5);
 }
 
@@ -159,6 +208,35 @@
     center/cover;
 }
 
+.modal__container--delete {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.modal__close-btn_type_delete {
+  position: absolute;
+  right: -52.5px;
+  top: 0;
+  background: transparent url(../images/previewCloseIcon.svg) no-repeat center
+    center/cover;
+}
+
+.modal__close-btn_type_delete:hover {
+  background: transparent url(../images/closeGrayVariant.svg) no-repeat center
+    center/cover;
+}
+
+@media only screen  and (max-width: 850px){
+.modal__close-btn_type_delete {
+  right: 0;
+  top: -48px;
+}
+}
+
 @media only screen and (max-width: 627px) {
   .modal__close-btn_type_preview {
     top: -48px;
@@ -173,11 +251,19 @@
 
   .modal__row {
     align-items: center;
-    margin: 0 0 24px;
+    margin: 0 0 20px;
   }
+
+
+.modal__form--orientation {
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
 
   .modal__title {
     font-size: 20px;
+    line-height: 120%;
   }
 
   .modal__caption {
@@ -185,17 +271,15 @@
     font-size: 16px;
   }
 
-  .modal__close-btn {
-    top: 22px;
-    right: 12px;
-  }
-
   .modal__label {
     margin: 0 0 24px;
+    color: rgba(33, 33, 33, 0.7);
+
   }
 
   .modal__input::placeholder {
     font-size: 16px;
+
   }
 
   .modal__submit-btn {
