@@ -248,9 +248,6 @@ function handleEditProfileSubmit(evt) {
     .then((data) => {
       profileNameEl.textContent = data.name;
       profileDescriptionEl.textContent = data.about;
-
-      // editProfileFormEl.reset();
-      // disabledBtn(editProfileSubmitBtn, settings);
       closeModal(editProfileModal);
     })
     .catch(console.error)
