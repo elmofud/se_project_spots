@@ -26,12 +26,21 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <h2 class="visually-hidden">Profile Block</h2>
-          <img
-            src="<%=require('./images/avatar.jpg')%>"
-            alt="avatar photo"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <button class="profile__avatar-btn">
+              <img
+                src="<%=require('./images/whitePencil.svg')%>"
+                alt="white Pencil Avatar"
+                class="profile__pencil-icon"
+              />
+            </button>
+            <h2 class="visually-hidden">Profile Block</h2>
+            <img
+              src="<%=require('./images/avatar.jpg')%>"
+              alt="avatar photo"
+              class="profile__avatar"
+            />
+          </div>
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
@@ -60,7 +69,10 @@
                 <img src="#" alt="" class="card__image" />
                 <div class="card__content">
                   <h2 class="card__title"></h2>
+                  <div class="card__container-liked">
+                  <p id="card-like-counter" class="card__counter">0</p>
                   <button type="button" class="card__like-btn"></button>
+                </div>
                 </div>
               </li>
             </template>
@@ -152,6 +164,46 @@
           <p class="modal__caption"></p>
         </div>
       </div>
+    <div id="avatar-modal" class="modal">
+      <div class="modal__container">
+        <div class="modal__row">
+          <h2 class="modal__title">Edit profile avatar</h2>
+          <button type="button" class="modal__close-btn"></button>
+        </div>
+        <form class="modal__form" id="edit-avatar-form">
+          <label for="profile-avatar-input" class="modal__label">
+            Profile Picture
+            <input
+              type="url"
+              id="profile-avatar-input"
+              class="modal__input"
+              placeholder="avatar goes here"
+              name="avatar"
+              required
+              minlength="2"
+            />
+            <span id="profile-avatar-input-error" class="modal__error"></span>
+          </label>
+          <button type="submit" class="modal__submit-btn">Save</button>
+        </form>
+      </div>
+    </div>
+    <div id="delete-modal" class="modal">
+      <div class="modal__container modal__container--delete">
+        <div class="modal__row">
+          <button
+            type="button"
+            class="modal__close-btn modal__close-btn_type_delete"
+          ></button>
+          <h2 class="modal__title modal__title--font">
+            Are you sure you want to delete this image</h2>
+        </div>
+        <form class="modal__form modal__form--orientation" id="delete-form">
+          <button type="submit" class="modal__submit-btn modal__submit-btn_type_delete">Delete</button>
+          <button type="button" class="modal__cancel-btn">Cancel</button>
+        </form>
+      </div>
+    </div>
     </div>
   </body>
 </html>
