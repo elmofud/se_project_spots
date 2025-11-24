@@ -1,4 +1,4 @@
-import { handleResponse } from "./helpers.js";
+import { handleResponse, _request } from "./helpers.js";
 
 export default class Api {
   constructor({ baseUrl, headers }) {
@@ -7,64 +7,65 @@ export default class Api {
   }
 
   getUserInfo() {
-    return fetch(`${this._baseUrl}/users/me`, {
-      headers: this._headers,
-    }).then(handleResponse);
-  }
+    return _request(`${this._baseUrl}/users/me`, {
+      headers: this._headers
+  });
+}
 
   getAppInfo() {
     return Promise.all([this.getUserInfo(), this.getInitialCards()]);
   }
 
   getInitialCards() {
-    return fetch(`${this._baseUrl}/cards`, {
-      headers: this._headers,
-    }).then(handleResponse);
+    return _request(`${this._baseUrl}/cards`, {
+      headers: this._headers
+    });
   }
 
   editUserInfo({ name, about }) {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return _request(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
         name,
         about,
       }),
-    }).then(handleResponse);
+    });
   }
 
   deleteCardInfo(selectedCardId) {
-    return fetch(`${this._baseUrl}/cards/${selectedCardId}`, {
+    return _request(`${this._baseUrl}/cards/${selectedCardId}`, {
       method: "DELETE",
       headers: this._headers,
-    }).then(handleResponse);
+    });
   }
 
   addCardInfo({name, link}) {
-    return fetch(`${this._baseUrl}/cards`, {
+    return _request(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify({
         name,
         link,
       }),
-   }).then(handleResponse);
+
+    });
   }
 
    editAvatarInfo(avatar) {
-    return fetch(`${this._baseUrl}/users/me/avatar`, {
+    return _request(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
         avatar,
       }),
-    }).then(handleResponse);
+    });
   }
 
      handleLikes(isLiked, selectedCardId) {
-    return fetch(`${this._baseUrl}/cards/${selectedCardId}/likes`, {
+    return _request(`${this._baseUrl}/cards/${selectedCardId}/likes`, {
       method: isLiked ? "DELETE" : "PUT",
       headers: this._headers,
-    }).then(handleResponse);
+    });
   }
 }

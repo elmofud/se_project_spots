@@ -61,6 +61,7 @@ const cardDeleteCloseBtn = cardDeleteModal.querySelector(".modal__close-btn");
 const cardCancelBtn = cardDeleteModal.querySelector(".modal__cancel-btn");
 const cardDeleteSubmitBtn = cardDeleteModal.querySelector(".modal__submit-btn");
 const cardDeleteForm = cardDeleteModal.querySelector("#delete-form");
+const cardCounter = document.querySelector(".card__counter");
 
 
 const avatarModal = document.querySelector("#avatar-modal");
@@ -149,10 +150,13 @@ function handleLike(evt,selectedCardId) {
   evt.preventDefault();
   const likeBtn = evt.target;
   let isLiked= likeBtn.classList.contains("card__like-btn_active");
+
   api.handleLikes(isLiked, selectedCardId)
+
   .then((res) => {
     if (res.isLiked) {
       likeBtn.classList.add("card__like-btn_active");
+      res.likes =+1;
     } else {
       likeBtn.classList.remove("card__like-btn_active");
 
@@ -175,6 +179,8 @@ function getCardElement(data) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardLikeBtnEl = cardElement.querySelector(".card__like-btn");
+  const cardCounter = cardElement.querySelector(".card__counter");
+
 
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;

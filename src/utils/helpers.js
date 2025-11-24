@@ -23,3 +23,7 @@ export function handleResponse(res) {
   }
   return Promise.reject(`Error: ${res.status}`);
 }
+
+ export function _request(url, options) {
+  return fetch(url, options).then(handleResponse);
+}
